@@ -12,43 +12,48 @@ export default function Rsvp() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
+    const stopAutoScroll = () => {
+    window.dispatchEvent(new Event("rsvp:interaction"));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    stopAutoScroll();
+
     if (!name.trim()) return;
 
     setSubmitting(true);
     setError("");
 
-    const payload = {
-      nom: name.trim(),
-      presence: attending === "oui" ? "Avec plaisir" : "Avec regret",
-      invites: guests,
-      mot_du_coeur: message.trim(),
-      evenement: "Fiançailles Rayen & Dounia",
-      date: "16 juillet 2026",
-      _subject: `RSVP – ${name.trim()}`,
-    };
+    const formData = new FormData();
+    formData.append("nom", name.trim());
+    formData.append(
+      "presence",
+      attending === "oui" ? "Avec plaisir" : "Avec regret"
+    );
+    formData.append("invites", guests);
+    formData.append("mot_du_coeur", message.trim());
+    formData.append("evenement", "Fiancailles Rayen & Dounia");
+    formData.append("date", "16 juillet 2026");
+    formData.append("_subject", `RSVP - ${name.trim()}`);
 
     try {
-      if (FORMSPREE_ENDPOINT) {
-        const res = await fetch(FORMSPREE_ENDPOINT, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(payload),
-        });
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
 
-        if (!res.ok) {
-          throw new Error("submit-failed");
-        }
+      if (!res.ok) {
+        throw new Error("submit-failed");
       }
 
       setSent(true);
     } catch {
       setError(
-        "L'envoi n'a pas abouti. Vérifiez votre endpoint Formspree dans Vercel puis réessayez."
+        "L'envoi n'a pas abouti. Vérifiez que votre formulaire Formspree est actif et que votre email Formspree est confirmé."
       );
     } finally {
       setSubmitting(false);
