@@ -47,8 +47,10 @@ export default function Rsvp() {
       });
 
       if (!res.ok) {
-        throw new Error("submit-failed");
-      }
+  const data = await res.json().catch(() => null);
+  console.log("Erreur Formspree :", res.status, data);
+  throw new Error("submit-failed");
+}
 
       setSent(true);
     } catch {
