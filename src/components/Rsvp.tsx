@@ -111,7 +111,10 @@ export default function Rsvp() {
               </label>
               <input
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => {
+  stopAutoScroll();
+  setName(e.target.value);
+}}
                 placeholder="Prénom & Nom"
                 required
                 className={inputClass}
@@ -128,7 +131,10 @@ export default function Rsvp() {
                     <button
                       key={v}
                       type="button"
-                      onClick={() => setAttending(v)}
+                      onClick={() => {
+  stopAutoScroll();
+  setAttending(v);
+}}
                       className={`flex-1 cursor-pointer py-3 text-[11px] tracking-wide uppercase transition ${
                         attending === v
                           ? "bg-gradient-to-r from-ivory-100 via-champagne to-ivory-200 text-gold-600 shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_8px_18px_-12px_rgba(178,141,74,0.45)]"
@@ -146,7 +152,10 @@ export default function Rsvp() {
                 </label>
                 <select
                   value={guests}
-                  onChange={(e) => setGuests(e.target.value)}
+                  onChange={(e) => {
+  stopAutoScroll();
+  setGuests(e.target.value);
+}}
                   className={inputClass}
                 >
                   {["1", "2", "3", "4", "5"].map((n) => (
@@ -164,7 +173,10 @@ export default function Rsvp() {
               </label>
               <textarea
                 value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                onChange={(e) => {
+  stopAutoScroll();
+  setMessage(e.target.value);
+}}
                 rows={3}
                 placeholder="Vos vœux pour les fiancés..."
                 className={inputClass}
