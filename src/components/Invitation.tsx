@@ -247,7 +247,7 @@ export default function Invitation() {
             <h2 className="font-script text-5xl text-gold-gradient sm:text-6xl">Confirmation</h2>
             <Divider />
           </div>
-          <div data-stop>
+          <div data-stop data-stop-manual>
             <Rsvp />
           </div>
         </motion.div>

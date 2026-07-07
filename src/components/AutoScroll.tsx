@@ -142,6 +142,11 @@ export default function AutoScroll({ active }: AutoScrollProps) {
       await smoothScrollTo(centerY(el), transitionTime(currentEl, el));
       if (cancelledRef.current) break;
       await wait(readingTime(el));
+      if (el.hasAttribute("data-stop-manual")) {
+  setPaused(true);
+  runningRef.current = false;
+  return;
+}
     }
 
     if (!cancelledRef.current) setFinished(true);
