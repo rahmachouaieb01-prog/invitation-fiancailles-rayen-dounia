@@ -134,23 +134,26 @@ export default function AutoScroll({ active }: AutoScrollProps) {
 
     // Pause de lecture sur le tout premier bloc (accueil)
     await wait(readingTime(stops[0]));
-
     for (let i = 1; i < stops.length; i++) {
-      if (cancelledRef.current) break;
-      const currentEl = stops[i - 1];
-      const el = stops[i];
-      await smoothScrollTo(centerY(el), transitionTime(currentEl, el));
-      if (cancelledRef.current) break;
-      await wait(readingTime(el));
-      if (el.hasAttribute("data-stop-manual")) {
-  setPaused(true);
-  runningRef.current = false;
-  return;
-}
-    }
+  if (cancelledRef.current) break;
 
-    if (!cancelledRef.current) setFinished(true);
+  const currentEl = stops[i - 1];
+  const el = stops[i];
+
+  await smoothScrollTo(centerY(el), transitionTime(currentEl, el));
+  if (cancelledRef.current) break;
+
+  if (el.hasAttribute("data-stop-manual")) {
+    setPaused(true);
     runningRef.current = false;
+    return;
+  }
+
+  await wait(readingTime(el));
+}
+
+if (!cancelledRef.current) setFinished(true);
+runningRef.current = false;
   };
 
   useEffect(() => {

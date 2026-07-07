@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT?.trim() || "";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mlgvyjnv";
 
 export default function Rsvp() {
   const [sent, setSent] = useState(false);
