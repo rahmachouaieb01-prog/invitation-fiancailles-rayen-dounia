@@ -22,10 +22,10 @@ function Divider() {
 }
 
 const programme = [
-  { heure: "18h00", titre: "Accueil des invités", detail: "Premiers instants de partage" },
-  { heure: "19h00", titre: "L'arrivée de Rayen & Dounia", detail: "Le bonheur prend vie" },
-  { heure: "20h00", titre: "Cérémonie des fiançailles", detail: "Échange des promesses et des bagues" },
-  { heure: "21h00", titre: "Soirée dansante", detail: "Musique live & douceurs sucrées" },
+  { heure: "20h00", titre: "Accueil des invités", detail: "Premiers instants de partage" },
+  { heure: "21h00", titre: "L'arrivée de Rayen & Dounia", detail: "Le bonheur prend vie" },
+  { heure: "21h00", titre: "Cérémonie des fiançailles", detail: "Échange des promesses et des bagues" },
+  { heure: "22h00", titre: "Soirée dansante", detail: "Musique live & douceurs sucrées" },
 ];
 
 export default function Invitation() {
@@ -68,7 +68,7 @@ export default function Invitation() {
           <div className="font-serif text-cocoa">
             <p className="text-2xl font-medium tracking-wide sm:text-3xl">Jeudi 16 Juillet 2026</p>
             <p className="mt-1 text-sm tracking-[0.35em] uppercase text-cocoa/60">
-              à partir de 18 heures
+              à partir de 20 heures
             </p>
           </div>
         </motion.div>
