@@ -48,7 +48,7 @@ export default function Rsvp() {
       setSent(true);
     } catch {
       setError(
-        "L'envoi n'a pas abouti pour le moment. Veuillez réessayer dans un instant."
+        "L'envoi n'a pas abouti. Vérifiez votre endpoint Formspree dans Vercel puis réessayez."
       );
     } finally {
       setSubmitting(false);
