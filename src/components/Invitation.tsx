@@ -218,20 +218,20 @@ export default function Invitation() {
               Une douce pensée pour nos êtres chers, qui nous regardent du Ciel et vivent à jamais dans nos cœurs.
             </p>
             <div className="mx-auto my-6 h-px w-20 bg-gradient-to-r from-transparent via-gold-400/70 to-transparent" />
-            <div className="mx-auto flex max-w-fit items-center justify-center gap-3 text-gold-500 sm:gap-4 md:gap-5">
-              <span className="font-serif text-base font-medium tracking-[0.16em] uppercase text-gold-400 sm:text-lg md:text-xl">
+            <div className="mx-auto flex max-w-fit flex-wrap items-center justify-center gap-x-3 gap-y-2 text-gold-500 sm:flex-nowrap sm:gap-4 md:gap-5 px-2">
+              <span className="font-serif text-base font-medium tracking-[0.08em] sm:tracking-[0.16em] uppercase text-gold-400 sm:text-lg md:text-xl">
                 ISMAHENE
               </span>
               <span className="text-gold-300/90">•</span>
-              <span className="font-serif text-base font-medium tracking-[0.16em] uppercase text-gold-400 sm:text-lg md:text-xl">
+              <span className="font-serif text-base font-medium tracking-[0.08em] sm:tracking-[0.16em] uppercase text-gold-400 sm:text-lg md:text-xl">
                 FATHI
               </span>
               <span className="text-gold-300/90">•</span>
-              <span className="font-serif text-base font-medium tracking-[0.16em] uppercase text-gold-400 sm:text-lg md:text-xl">
+              <span className="font-serif text-base font-medium tracking-[0.08em] sm:tracking-[0.16em] uppercase text-gold-400 sm:text-lg md:text-xl">
                 MONSEF
               </span>
               <span className="text-gold-300/90">•</span>
-              <span className="font-serif text-base font-medium tracking-[0.16em] uppercase text-gold-400 sm:text-lg md:text-xl">
+              <span className="font-serif text-base font-medium tracking-[0.08em] sm:tracking-[0.16em] uppercase text-gold-400 sm:text-lg md:text-xl">
                 SAMI
               </span>
             </div>
