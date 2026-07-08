@@ -104,8 +104,14 @@ export default function Invitation() {
 
       {/* ===== Details ===== */}
       <section className="relative px-6 pt-20 pb-32 sm:py-24">
-        <motion.div className="mx-auto max-w-5xl space-y-8 sm:space-y-12">
-          <div data-stop data-stop-top className="space-y-3 text-center">
+        <motion.div
+  {...fadeUp}
+  data-stop
+  data-desktop-stop
+  data-stop-top
+  className="mx-auto max-w-5xl space-y-8 sm:space-y-12"
+>
+  <div data-mobile-stop data-stop-top className="space-y-3 text-center">
   <p className="text-xs tracking-[0.45em] uppercase text-gold-600">Les détails</p>
   <h2 className="font-script text-4xl text-gold-gradient sm:text-6xl">La réception</h2>
   <Divider />
@@ -138,32 +144,36 @@ export default function Invitation() {
                 lignes: ["Laissez parler votre élégance"],
               },
             ].map((c) => (
-              <div
-                key={c.titre}
-                className="satin-panel gold-frame relative rounded-xl p-8 text-center shadow-[0_20px_45px_-20px_rgba(120,95,55,0.4)] transition-transform duration-500 hover:-translate-y-1.5"
-              >
-                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-gold-400/50 bg-white/60">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-6 w-6 stroke-gold-500"
-                    fill="none"
-                    strokeWidth={1.5}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    {c.icon}
-                  </svg>
-                </div>
-                <h3 className="mb-3 font-serif text-xl font-semibold tracking-wide text-cocoa">
-                  {c.titre}
-                </h3>
-                {c.lignes.map((l) => (
-                  <p key={l} className="text-sm leading-relaxed text-cocoa/70">
-                    {l}
-                  </p>
-                ))}
-              </div>
-            ))}
+  <div
+    key={c.titre}
+    data-mobile-stop
+    data-stop-top
+    className="satin-panel gold-frame relative rounded-xl p-4 text-center shadow-[0_20px_45px_-20px_rgba(120,95,55,0.4)] transition-transform duration-500 hover:-translate-y-1.5 sm:p-8"
+  >
+    <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-gold-400/50 bg-white/60 sm:mb-5 sm:h-14 sm:w-14">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-5 w-5 stroke-gold-500 sm:h-6 sm:w-6"
+        fill="none"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {c.icon}
+      </svg>
+    </div>
+
+    <h3 className="mb-1.5 font-serif text-lg font-semibold tracking-wide text-cocoa sm:mb-3 sm:text-xl">
+      {c.titre}
+    </h3>
+
+    {c.lignes.map((l) => (
+      <p key={l} className="text-xs leading-relaxed text-cocoa/70 sm:text-sm">
+        {l}
+      </p>
+    ))}
+  </div>
+))}
           </div>
         </motion.div>
       </section>

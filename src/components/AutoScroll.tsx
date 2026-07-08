@@ -124,9 +124,19 @@ export default function AutoScroll({ active }: AutoScrollProps) {
     cancelledRef.current = false;
     setFinished(false);
 
-    const stops = Array.from(
-      document.querySelectorAll<HTMLElement>("[data-stop]")
-    );
+    const isMobile = window.innerWidth < 640;
+
+const allStops = Array.from(
+  document.querySelectorAll<HTMLElement>("[data-stop], [data-mobile-stop]")
+);
+
+const stops = allStops.filter((el) => {
+  if (isMobile) {
+    return !el.hasAttribute("data-desktop-stop");
+  }
+
+  return el.hasAttribute("data-stop") && !el.hasAttribute("data-mobile-stop");
+});
     if (stops.length === 0) {
       runningRef.current = false;
       return;
