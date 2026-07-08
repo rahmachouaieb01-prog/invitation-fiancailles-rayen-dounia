@@ -104,12 +104,12 @@ export default function Invitation() {
 
       {/* ===== Details ===== */}
       <section className="relative px-6 pt-20 pb-32 sm:py-24">
-        <motion.div data-stop className="mx-auto max-w-5xl space-y-8 sm:space-y-12">
-          <div className="space-y-3 text-center">
-            <p className="text-xs tracking-[0.45em] uppercase text-gold-600">Les détails</p>
-            <h2 className="font-script text-5xl text-gold-gradient sm:text-6xl">La réception</h2>
-            <Divider />
-          </div>
+        <motion.div className="mx-auto max-w-5xl space-y-8 sm:space-y-12">
+          <div data-stop data-stop-top className="space-y-3 text-center">
+  <p className="text-xs tracking-[0.45em] uppercase text-gold-600">Les détails</p>
+  <h2 className="font-script text-4xl text-gold-gradient sm:text-6xl">La réception</h2>
+  <Divider />
+</div>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             {[
