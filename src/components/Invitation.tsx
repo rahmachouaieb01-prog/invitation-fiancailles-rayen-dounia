@@ -143,10 +143,10 @@ export default function Invitation() {
                 titre: "Tenue",
                 lignes: ["Laissez parler votre élégance"],
               },
-            ].map((c) => (
+            ].map((c, i) => (
   <div
     key={c.titre}
-    data-mobile-stop
+    data-mobile-stop={i < 2 ? true : undefined}
     data-stop-top
     className="satin-panel gold-frame relative rounded-xl p-4 text-center shadow-[0_20px_45px_-20px_rgba(120,95,55,0.4)] transition-transform duration-500 hover:-translate-y-1.5 sm:p-8"
   >
