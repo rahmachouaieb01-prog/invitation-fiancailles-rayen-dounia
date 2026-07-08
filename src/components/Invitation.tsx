@@ -103,7 +103,7 @@ export default function Invitation() {
       </section>
 
       {/* ===== Details ===== */}
-      <section className="relative px-6 py-14 sm:py-24">
+      <section className="relative px-6 pt-20 pb-32 sm:py-24">
         <motion.div data-stop className="mx-auto max-w-5xl space-y-8 sm:space-y-12">
           <div className="space-y-3 text-center">
             <p className="text-xs tracking-[0.45em] uppercase text-gold-600">Les détails</p>
@@ -111,7 +111,7 @@ export default function Invitation() {
             <Divider />
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             {[
               {
                 icon: (
