@@ -23,6 +23,7 @@ export default function MusicPlayer({ active }: MusicPlayerProps) {
     audio.loop = true;
     audio.volume = 0.0;
     audio.preload = "auto";
+    audio.load();
     audioRef.current = audio;
     audio.addEventListener("canplaythrough", () => setReady(true), { once: true });
     return () => {
