@@ -103,8 +103,8 @@ export default function Invitation() {
       </section>
 
       {/* ===== Details ===== */}
-      <section className="relative px-6 py-24">
-        <motion.div {...fadeUp} data-stop className="mx-auto max-w-5xl space-y-12">
+      <section className="relative px-6 py-14 sm:py-24">
+        <motion.div data-stop className="mx-auto max-w-5xl space-y-8 sm:space-y-12">
           <div className="space-y-3 text-center">
             <p className="text-xs tracking-[0.45em] uppercase text-gold-600">Les détails</p>
             <h2 className="font-script text-5xl text-gold-gradient sm:text-6xl">La réception</h2>
